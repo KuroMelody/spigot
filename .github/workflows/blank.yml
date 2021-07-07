@@ -17,10 +17,15 @@ jobs:
           java-version: '11'
       
       - name: download
-        run: https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+        run: wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
       
       - name: build
         run: java -jar BuildTools.jar --rev 1.17.1
         
       - name: ls
         run: ls
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: spigot-1.17.1.jar
