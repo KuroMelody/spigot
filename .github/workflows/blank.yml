@@ -13,8 +13,8 @@ jobs:
       
       - uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
-          java-version: '11'
+          distribution: 'zulu'
+          java-version: '16'
       
       - name: download
         run: wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
